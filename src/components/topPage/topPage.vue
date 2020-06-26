@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="main">
+      <div class="main" :style="{'background-image' : `url('${bg}')`}">
       </div>
       <description />
       <movieList />
@@ -13,6 +13,11 @@ export default {
   components: {
     description,
     movieList
+  },
+  data () {
+    return {
+      bg: require('@/assets/main.jpg')
+    }
   }
 }
 </script>
@@ -21,7 +26,6 @@ export default {
     height:40vh;
     width:100%;
     overflow: hidden;
-    background-image: url("../../assets/main.jpg");
     background-size: cover;
   }
 </style>
