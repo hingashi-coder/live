@@ -11,13 +11,19 @@
 export default {
   data () {
     return {
-      youtubeLink: 'https://www.youtube.com/embed/1S7JJ-K98gc',
+      youtubeLink: '',
       deviceWidth: this.calcwidth()
     }
   },
+  props: [
+    'client'
+  ],
   mounted () {
     window.addEventListener('resize', () => {
       this.deviceWidth = this.calcwidth()
+    })
+    this.client.getEntry(this.$route.query.movieid).then(entry => {
+      this.youtubeLink = 'https://www.youtube.com/embed/' + entry.fields.youtubeUrl + '?autoplay=1'
     })
   },
   methods: {

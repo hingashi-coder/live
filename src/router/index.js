@@ -11,15 +11,18 @@ export default new Router({
       path: '/',
       name: '',
       component: Top,
+      props: true,
       children: [
         {
           path: '',
-          component: topPage
+          component: topPage,
+          props: true
         },
         {
           name: 'watch',
           path: 'watch',
-          component: watch
+          component: watch,
+          props: true
         }
       ]
     }

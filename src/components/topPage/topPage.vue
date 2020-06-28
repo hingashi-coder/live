@@ -1,19 +1,25 @@
 <template>
-    <div>
-      <div class="main" :style="{'background-image' : `url('${bg}')`}">
+    <div class="bg" :style="{'background-image' : `url('${bg}')`}">
+      <div class="main" >
       </div>
       <description />
-      <movieList />
+      <movieList :client="client" />
+      <foot />
     </div>
 </template>
 <script>
 import description from './description.vue'
 import movieList from './movieList.vue'
+import foot from './footer'
 export default {
   components: {
     description,
-    movieList
+    movieList,
+    foot
   },
+  props: [
+    'client'
+  ],
   data () {
     return {
       bg: require('@/assets/main.jpg')
@@ -26,6 +32,8 @@ export default {
     height:40vh;
     width:100%;
     overflow: hidden;
-    background-size: cover;
+  }
+  .bg{
+    background-attachment: fixed;
   }
 </style>

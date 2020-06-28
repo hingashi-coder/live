@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     color:white;
-    background: linear-gradient(to right,green,rgb(126, 179, 48));
+    background: linear-gradient(to right,rgba(0, 128, 0, 0.881),rgba(127, 179, 48, 0.888));
     span{
       margin: 0 auto;
       font-family: 'Noto Sans JP';

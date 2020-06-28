@@ -1,5 +1,6 @@
 <template>
   <div style="background:transparent;">
+    <div class="dummy"></div>
     <div class="topBar">
       <div class="row">
         <div class="col-8">
@@ -16,11 +17,15 @@
 </template>
 
 <style scoped lang="scss">
+.dummy{
+  height:50px;
+}
 .topBar{
-  position: sticky;
+  position: fixed;
   top: 0;
   width:100%;
   height: 50px;
+  z-index: 9999;
   background: linear-gradient(to right, green, rgba(158, 255, 47, 0.795));
   .row{
     height:100%;
