@@ -35,5 +35,6 @@ export default {
   }
   .bg{
     background-attachment: fixed;
+    background-size: cover;
   }
 </style>
