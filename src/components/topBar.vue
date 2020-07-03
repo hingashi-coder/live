@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-8">
           <div class="title">
-            youtube テストページ
+            昌平高校WEB説明会
           </div>
         </div>
         <div class="col-4">
