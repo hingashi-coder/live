@@ -18,8 +18,8 @@ export default {
     return {
       contentful,
       client: contentful.createClient({
-        space: 'itjnbdo8ahaq',
-        accessToken: 'hyiBgihqnytV5L9as0iTFXPNTklVD9mk7kgP3LUcuus'
+        space: 'jlpohh01g2d6',
+        accessToken: 'skUSElMndYSdlHc-RctrLuyNdc5ffgNwFpKeDIK_nE4'
       })
     }
   }
