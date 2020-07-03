@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div style="text-align:center;">{{error}}</div>
     <div id="watch">
       <iframe id="player" :width="deviceWidth" :height="deviceWidth * 0.5625" :src="youtubeLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -12,7 +13,8 @@ export default {
   data () {
     return {
       youtubeLink: '',
-      deviceWidth: this.calcwidth()
+      deviceWidth: this.calcwidth(),
+      error: ''
     }
   },
   props: [
@@ -24,6 +26,11 @@ export default {
     })
     this.client.getEntry(this.$route.query.movieid).then(entry => {
       this.youtubeLink = 'https://www.youtube.com/embed/' + entry.fields.youtubeUrl + '?autoplay=1'
+    }).catch(e => {
+      this.error = '動画が見つかりません。5秒後にトップページへ戻ります。'
+      setTimeout(() => {
+        this.$router.push('/')
+      }, 5000)
     })
   },
   methods: {
