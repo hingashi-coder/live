@@ -32,6 +32,7 @@ export default {
         this.$router.push('/')
       }, 5000)
     })
+    window.youtube = this
   },
   methods: {
     calcwidth: function () {
